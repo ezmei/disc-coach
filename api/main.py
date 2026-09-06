@@ -15,7 +15,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = YOLO("yolo11m-pose.pt")
+# Lett pose-modell for Render CPU
+model = YOLO("yolo11n-pose.pt")
 
 
 @app.get("/")
@@ -23,7 +24,7 @@ def root():
     return {
         "app": "Disc Coach",
         "status": "online",
-        "ai": "YOLO11m-pose",
+        "ai": "YOLO11n-pose",
         "version": "stable"
     }
 
@@ -32,7 +33,7 @@ def root():
 def health():
     return {
         "status": "ok",
-        "ai": "YOLO11m-pose",
+        "ai": "YOLO11n-pose",
         "message": "Disc Coach AI backend is ready"
     }
 
@@ -88,14 +89,9 @@ async def analyze(video: UploadFile = File(...)):
                 "keypoints": keypoints.tolist()
             })
 
-        # Enkel analyse basert på faktisk YOLO-data
         plant_frame = None
 
         if len(frames) >= 10:
-
-            # Første versjon:
-            # bruk midtpunktet i den delen av kastet
-            # der kroppen faktisk er registrert.
             plant_frame = frames[
                 int(len(frames) * 0.55)
             ]["frame"]
@@ -106,7 +102,7 @@ async def analyze(video: UploadFile = File(...)):
             "frames_analyzed": frame_number,
             "frames_with_pose": len(frames),
             "keypoints_per_person": 17,
-            "model": "YOLO11m-pose",
+            "model": "YOLO11n-pose",
 
             "analysis": {
                 "plant": {
@@ -115,8 +111,6 @@ async def analyze(video: UploadFile = File(...)):
                 } if plant_frame else None
             },
 
-            # Beholder dette foreløpig slik at vi
-            # kan verifisere at YOLO fortsatt fungerer.
             "results": frames
         }
 

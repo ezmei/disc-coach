@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
 <title>Disc Coach</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b1110;
-  color: white;
+  background: #09100e;
+  color: #f4f7f5;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
 
 .container {
   max-width: 720px;
   margin: auto;
-  padding: 24px 18px 50px;
+  padding: 24px 18px 60px;
 }
 
 .logo {
   font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
   margin-bottom: 55px;
 }
 
 .logo span {
-  opacity: .55;
+  opacity: .45;
 }
 
 h1 {
-  font-size: 42px;
-  line-height: 1.02;
-  margin: 0 0 15px;
+  font-size: 43px;
+  line-height: 1;
+  margin: 0 0 16px;
 }
 
 .subtitle {
-  color: #aab5b1;
+  color: #9ba8a2;
   font-size: 17px;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .card {
-  background: #131b19;
-  border: 1px solid #27312e;
+  background: #131b18;
+  border: 1px solid #26312d;
   border-radius: 20px;
   padding: 20px;
-  margin-top: 20px;
-}
-
-input[type="file"] {
-  display: none;
+  margin-top: 18px;
 }
 
 .upload {
   display: block;
+  padding: 22px;
   text-align: center;
-  padding: 20px;
-  border: 2px dashed #46534f;
+  border: 2px dashed #46534e;
   border-radius: 16px;
   cursor: pointer;
-  color: #dce5e2;
 }
 
 .upload strong {
@@ -76,102 +82,142 @@ input[type="file"] {
 }
 
 .upload span {
-  color: #899590;
+  color: #85918c;
   font-size: 14px;
+}
+
+input {
+  display: none;
 }
 
 video {
   width: 100%;
+  display: none;
   margin-top: 18px;
   border-radius: 14px;
-  background: #000;
-  display: none;
+  background: black;
 }
 
 button {
   width: 100%;
+  padding: 17px;
   border: 0;
   border-radius: 14px;
-  padding: 17px;
   margin-top: 18px;
+  background: #d9ff4f;
+  color: #10150e;
   font-size: 17px;
-  font-weight: 800;
-  cursor: pointer;
-  background: #d7ff4f;
-  color: #10150f;
+  font-weight: 900;
 }
 
 button:disabled {
   opacity: .45;
-  cursor: not-allowed;
 }
 
 .status {
   display: none;
-  margin-top: 20px;
-  padding: 16px;
+  margin-top: 16px;
+  padding: 15px;
+  background: #1a2420;
   border-radius: 14px;
-  background: #19231f;
-  color: #cbd5d1;
+  color: #ccd6d2;
 }
 
 .result {
   display: none;
 }
 
-.result h2 {
-  margin-top: 0;
+.success {
+  color: #d9ff4f;
+  font-weight: 700;
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .stat {
-  background: #19231f;
+  background: #1a2420;
   border-radius: 14px;
-  padding: 16px;
+  padding: 15px;
 }
 
 .stat small {
   display: block;
-  color: #84908b;
-  margin-bottom: 6px;
-}
-
-.stat strong {
-  font-size: 21px;
-}
-
-.success {
-  color: #d7ff4f;
-}
-
-.error {
-  color: #ff8f8f;
-}
-
-.phase {
-  margin-top: 20px;
-  padding: 17px;
-  border-radius: 14px;
-  background: #19231f;
-}
-
-.phase strong {
-  display: block;
+  color: #81908a;
   margin-bottom: 7px;
 }
 
-.muted {
-  color: #87938e;
-  font-size: 14px;
+.stat strong {
+  font-size: 20px;
 }
+
+.section {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 14px;
+  color: #81908a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.finding {
+  background: #1a2420;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.finding h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.finding p {
+  margin: 0;
+  color: #b8c3be;
+  line-height: 1.45;
+}
+
+.phase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.phase-item {
+  padding: 9px 11px;
+  border-radius: 20px;
+  background: #202b27;
+  color: #bfc9c5;
+  font-size: 13px;
+}
+
+.phase-item.plant {
+  background: #d9ff4f;
+  color: #10150e;
+  font-weight: 800;
+}
+
+.meta {
+  color: #718079;
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+.error {
+  color: #ff9999;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
@@ -181,18 +227,34 @@ button:disabled {
     DISC <span>COACH</span>
   </div>
 
-  <h1>Film kastet.<br>Vi finner resten.</h1>
+  <h1>
+    Film kastet.<br>
+    Vi finner resten.
+  </h1>
 
   <div class="subtitle">
-    Last opp et kast, så analyserer Disc Coach bevegelsen din med ekte AI.
+    Last opp et kast. Disc Coach analyserer
+    kroppens bevegelse med ekte AI.
   </div>
+
 
   <div class="card">
 
-    <label class="upload" for="videoInput">
-      <strong>＋ Velg video</strong>
-      <span id="fileText">MP4 eller annen videofil</span>
+    <label
+      class="upload"
+      for="videoInput"
+    >
+
+      <strong>
+        ＋ Velg video
+      </strong>
+
+      <span id="fileText">
+        MP4 eller annen videofil
+      </span>
+
     </label>
+
 
     <input
       id="videoInput"
@@ -200,178 +262,454 @@ button:disabled {
       accept="video/*"
     >
 
-    <video id="videoPreview" controls></video>
 
-    <button id="analyzeButton" disabled>
+    <video
+      id="videoPreview"
+      controls
+    ></video>
+
+
+    <button
+      id="analyzeButton"
+      disabled
+    >
       Analyser kastet
     </button>
 
-    <div id="status" class="status"></div>
+
+    <div
+      id="status"
+      class="status"
+    ></div>
 
   </div>
 
-  <div id="result" class="card result">
 
-    <h2>Disc Coach – analyse</h2>
+  <div
+    id="result"
+    class="card result"
+  >
 
     <div class="success">
-      ✓ AI-analysen er gjennomført
+      ✓ AI-analyse ferdig
     </div>
+
 
     <div class="stats">
 
       <div class="stat">
-        <small>Analyserte frames</small>
-        <strong id="framesAnalyzed">–</strong>
+
+        <small>
+          Frames
+        </small>
+
+        <strong id="frames">
+          –
+        </strong>
+
       </div>
 
-      <div class="stat">
-        <small>Frames med kropp</small>
-        <strong id="framesPose">–</strong>
-      </div>
 
       <div class="stat">
-        <small>Kroppspunkter</small>
-        <strong id="keypoints">17</strong>
+
+        <small>
+          Video
+        </small>
+
+        <strong id="duration">
+          –
+        </strong>
+
       </div>
 
+
       <div class="stat">
-        <small>AI-modell</small>
-        <strong id="model">–</strong>
+
+        <small>
+          Kastarm
+        </small>
+
+        <strong id="hand">
+          –
+        </strong>
+
+      </div>
+
+
+      <div class="stat">
+
+        <small>
+          Plant
+        </small>
+
+        <strong id="plant">
+          –
+        </strong>
+
       </div>
 
     </div>
 
-    <div class="phase">
 
-      <strong>Første steg</strong>
+    <div class="section">
 
-      <div class="muted">
-        Selve bevegelsesanalysen kommer i neste versjon.
-        Vi har nå koblet videoen til den ekte pose-AI-en.
+      <div class="section-title">
+        Kastfaser
+      </div>
+
+      <div
+        id="phases"
+        class="phase"
+      ></div>
+
+    </div>
+
+
+    <div class="section">
+
+      <div class="section-title">
+        Disc Coach
+      </div>
+
+      <div class="finding">
+
+        <h3 id="findingTitle">
+          Første funn
+        </h3>
+
+        <p id="findingMessage">
+          –
+        </p>
+
       </div>
 
     </div>
+
+
+    <div
+      id="meta"
+      class="meta"
+    ></div>
 
   </div>
 
 </div>
 
+
 <script>
 
-const API_URL = "https://disc-coach-api.onrender.com/analyze";
+const API =
+  "https://disc-coach-api.onrender.com/analyze";
 
-const videoInput = document.getElementById("videoInput");
-const videoPreview = document.getElementById("videoPreview");
-const analyzeButton = document.getElementById("analyzeButton");
-const fileText = document.getElementById("fileText");
-const statusBox = document.getElementById("status");
-const resultBox = document.getElementById("result");
+
+const input =
+  document.getElementById(
+    "videoInput"
+  );
+
+const preview =
+  document.getElementById(
+    "videoPreview"
+  );
+
+const button =
+  document.getElementById(
+    "analyzeButton"
+  );
+
+const fileText =
+  document.getElementById(
+    "fileText"
+  );
+
+const status =
+  document.getElementById(
+    "status"
+  );
+
+const result =
+  document.getElementById(
+    "result"
+  );
+
 
 let selectedFile = null;
 
-videoInput.addEventListener("change", function () {
 
-  selectedFile = this.files[0];
+input.addEventListener(
+  "change",
+  () => {
 
-  if (!selectedFile) {
-    analyzeButton.disabled = true;
-    return;
-  }
+    selectedFile =
+      input.files[0];
 
-  fileText.textContent = selectedFile.name;
+    if (!selectedFile) {
+      return;
+    }
 
-  const videoURL = URL.createObjectURL(selectedFile);
+    fileText.textContent =
+      selectedFile.name;
 
-  videoPreview.src = videoURL;
-  videoPreview.style.display = "block";
-
-  analyzeButton.disabled = false;
-
-  resultBox.style.display = "none";
-  statusBox.style.display = "none";
-});
-
-
-analyzeButton.addEventListener("click", async function () {
-
-  if (!selectedFile) {
-    return;
-  }
-
-  analyzeButton.disabled = true;
-
-  statusBox.style.display = "block";
-  statusBox.className = "status";
-  statusBox.textContent =
-    "⏳ Laster opp videoen og starter AI-analysen...";
-
-  resultBox.style.display = "none";
-
-  const formData = new FormData();
-
-  formData.append("video", selectedFile);
-
-  try {
-
-    const response = await fetch(API_URL, {
-      method: "POST",
-      body: formData
-    });
-
-    if (!response.ok) {
-
-      throw new Error(
-        "Serveren svarte med HTTP " + response.status
+    preview.src =
+      URL.createObjectURL(
+        selectedFile
       );
+
+    preview.style.display =
+      "block";
+
+    button.disabled =
+      false;
+
+    result.style.display =
+      "none";
+
+  }
+);
+
+
+button.addEventListener(
+  "click",
+  async () => {
+
+    if (!selectedFile) {
+      return;
+    }
+
+
+    button.disabled =
+      true;
+
+    result.style.display =
+      "none";
+
+    status.style.display =
+      "block";
+
+    status.className =
+      "status";
+
+    status.textContent =
+      "⏳ Laster opp videoen...";
+
+
+    const form =
+      new FormData();
+
+    form.append(
+      "video",
+      selectedFile
+    );
+
+
+    try {
+
+      status.textContent =
+        "🧠 Disc Coach analyserer kastet...";
+
+
+      const response =
+        await fetch(
+          API,
+          {
+            method: "POST",
+            body: form
+          }
+        );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          "Serverfeil HTTP " +
+          response.status
+        );
+
+      }
+
+
+      const data =
+        await response.json();
+
+
+      console.log(
+        "Disc Coach:",
+        data
+      );
+
+
+      renderResult(
+        data
+      );
+
+
+      status.textContent =
+        "✓ Analyse ferdig";
+
+      status.className =
+        "status success";
+
+
+      result.style.display =
+        "block";
+
+
+    } catch (error) {
+
+      console.error(
+        error
+      );
+
+      status.textContent =
+        "Kunne ikke analysere videoen: " +
+        error.message;
+
+      status.className =
+        "status error";
 
     }
 
-    statusBox.textContent =
-      "🧠 AI analyserer kroppens bevegelser...";
 
-    const data = await response.json();
+    button.disabled =
+      false;
 
-    console.log("Disc Coach API:", data);
+  }
+);
 
-    document.getElementById("framesAnalyzed").textContent =
-      data.frames_analyzed ?? "–";
 
-    document.getElementById("framesPose").textContent =
-      data.frames_with_pose ?? "–";
+function renderResult(
+  data
+) {
 
-    document.getElementById("keypoints").textContent =
-      data.keypoints_per_person ?? "17";
+  const video =
+    data.video || {};
 
-    document.getElementById("model").textContent =
-      data.model ?? "YOLO";
+  const pose =
+    data.pose || {};
 
-    statusBox.textContent =
-      "✓ Analyse ferdig";
+  const throwing =
+    data.throw || {};
 
-    statusBox.className = "status success";
+  const coaching =
+    data.coaching || {};
 
-    resultBox.style.display = "block";
 
-  } catch (error) {
+  document.getElementById(
+    "frames"
+  ).textContent =
+    video.frames ?? "–";
 
-    console.error(error);
 
-    statusBox.textContent =
-      "Kunne ikke analysere videoen. " +
-      error.message;
+  document.getElementById(
+    "duration"
+  ).textContent =
+    video.duration_seconds != null
+      ? video.duration_seconds + " s"
+      : "–";
 
-    statusBox.className = "status error";
 
-  } finally {
+  const hand =
+    throwing.hand || {};
 
-    analyzeButton.disabled = false;
+  document.getElementById(
+    "hand"
+  ).textContent =
+    hand.hand || "Ukjent";
+
+
+  const plant =
+    throwing.plant;
+
+
+  document.getElementById(
+    "plant"
+  ).textContent =
+    plant
+      ? "Frame " + plant.frame
+      : "Ikke sikker";
+
+
+  const phases =
+    document.getElementById(
+      "phases"
+    );
+
+  phases.innerHTML =
+    "";
+
+
+  if (
+    Array.isArray(
+      throwing.phases
+    )
+  ) {
+
+    throwing.phases.forEach(
+      phase => {
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+        item.className =
+          "phase-item";
+
+
+        if (
+          phase.name
+            .toLowerCase()
+            .includes("plant")
+        ) {
+
+          item.classList.add(
+            "plant"
+          );
+
+        }
+
+
+        item.textContent =
+          phase.name;
+
+
+        phases.appendChild(
+          item
+        );
+
+      }
+    );
 
   }
 
-});
+
+  document.getElementById(
+    "findingTitle"
+  ).textContent =
+    coaching.title ||
+    "Første funn";
+
+
+  document.getElementById(
+    "findingMessage"
+  ).textContent =
+    coaching.message ||
+    "Ingen funn ennå.";
+
+
+  document.getElementById(
+    "meta"
+  ).textContent =
+    "YOLO11m-pose · " +
+    (pose.frames_with_pose || 0) +
+    " frames med kropp · " +
+    (pose.keypoints || 17) +
+    " keypoints";
+
+}
 
 </script>
 
 </body>
+
 </html>
